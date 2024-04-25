@@ -67,7 +67,7 @@ export default class JsxParser extends React.Component<TProps> {
 			parsed = parsed.body[0].expression.children || []
 		} catch (error) {
 			if (this.props.showWarnings) console.warn(error) // eslint-disable-line no-console
-			if (this.props.onError) this.props.onError(error)
+			if (this.props.onError) this.props.onError(error as any)
 			if (this.props.renderError) {
 				return this.props.renderError({ error: String(error) })
 			}
